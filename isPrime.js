@@ -16,7 +16,7 @@ function isPrime2(num) {
     }
     return true
 }
-//Optimized O(n)
+//Optimized O(sqrt(n))
 function isPrime3(num) {
     if (num <= 1) return false
     for (i = 2; i <= Math.sqrt(num); i++) {
