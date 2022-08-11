@@ -1,5 +1,3 @@
-
-
 const gridTraveler = (x, y, memo = {}) => {
     let key = x + ',' + y
     if (key in memo) return memo[key]
