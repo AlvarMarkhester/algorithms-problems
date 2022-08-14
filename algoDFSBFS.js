@@ -20,6 +20,13 @@ const depthFirstSearch = (graph, source) => {
 
 }
 
+const depthFirstSearchRecursive = (graph, source) => {
+    console.log(source)
+    for (let neighbour of graph[source]) {
+        depthFirstSearchRecursive(graph, neighbour)
+    }
+}
+
 const breathFirstSearch = (graph, source) => {
     const queue = [source]
 
@@ -32,5 +39,8 @@ const breathFirstSearch = (graph, source) => {
     }
 }
 
-//depthFirstSearch(graph, "a");
+depthFirstSearch(graph, "a");
+console.log("--")
 breathFirstSearch(graph, "a")
+console.log("--")
+depthFirstSearchRecursive(graph, "a");
