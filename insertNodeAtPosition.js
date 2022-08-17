@@ -6,8 +6,7 @@ function insertNodeAtPosition(llist, data, position) {
     let current = llist;
     let prevNode;
 
-    for (let i = 1; i <= position; i++) {
-        current = current.next;
+    for (let i = 0; i <= position; i++) {
         if (i === position - 1) {
             prevNode = current;
         }
@@ -18,5 +17,6 @@ function insertNodeAtPosition(llist, data, position) {
             };
             return llist;
         }
+        current = current.next;
     }
 }
