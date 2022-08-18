@@ -16,12 +16,23 @@ function cutTheSticks(arr) {
 }
 
 //Recursive O(n^2)
-//Requires sorted array
-const arr = [] = arr.sort()
+//Sorted array
 function CutTheSticks1(arr) {
     if(!arr.length) return
     console.log(arr.length)
     CutTheSticks1(arr.map(value => value - arr[0]).filter(value => value > 0))
+}
+
+//Recursive O(n log(n))
+//Sorting the array is n log n fastest
+
+function CutTheSticks2(arr,min) {
+    if(!arr.length) return
+    console.log(arr.length)
+    while(arr[0] === min) {
+        arr.shift()
+    }
+    CutTheSticks2(arr, arr[0])
 }
 
 
