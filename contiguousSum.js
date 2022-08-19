@@ -33,4 +33,4 @@ function contiguousSumK(arr, k) {
 }
 
 console.log(contiguousSum(array))
-console.log(contiguousSumK(array, 3))
+console.log(contiguousSumK(array, 6))
