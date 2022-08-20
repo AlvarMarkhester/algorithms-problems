@@ -1,25 +1,20 @@
 const s = "abcabcbb"
 
-
-//failed approach
 var lengthOfLongestSubstring = function(s) {
-    let longestSubstring = Number.MIN_VALUE;
-    let map = {}
-    let start = 0
-    for(var end = 0; end < s.length; end++) {
-        if(map[s[end]]) {
-            if(longestSubstring < end - start) {
-                longestSubstring = end - start
-            }
-            start = end
-            for (let key in map) delete map[key];
+    let max = 0;
+    let chars = new Set()
+    let l = 0
+    for(var r = 0; r < s.length; r++) {
+        while(chars.has(s[r])) {
+            chars.delete(s[l])
+            l++
         }
-
-        map[s[end]] = end
-        console.log(map)
+        chars.add(s[r])
+        max = Math.max(max, r-l+1)
     }
-    longestSubstring = Math.max(longestSubstring, start-end)
-    return longestSubstring;
+    return max;
 };
+
+
 
 console.log(lengthOfLongestSubstring(s))
