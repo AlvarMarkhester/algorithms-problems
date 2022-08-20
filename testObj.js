@@ -1,6 +1,9 @@
-const obj = {
 
+const map = {
+    "a": 3
 }
+console.log(map["b"] > 5)
 
-obj["a"] += 1
-console.log(obj["a"])
+const s = "c" + " "
+console.log(s[0])
+console.log(s.length)
