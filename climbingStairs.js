@@ -1,5 +1,5 @@
 
-//Recursive with memo, abit slower
+//Recursive with memo, abit slower, o(n+n-1)
 var climbStairsMemo = function(n, memo = {}) {
     if(n in memo) return memo[n]
     if(n < 0) return 0
@@ -10,7 +10,7 @@ var climbStairsMemo = function(n, memo = {}) {
     
 };
 
-//Tabulation, abit faster
+//Tabulation, abit faster o(n)
 var climbStairsTab = function(n) {
     const array = Array(n+1).fill(0)
 
