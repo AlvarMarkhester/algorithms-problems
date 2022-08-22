@@ -1,34 +1,48 @@
 var addTwoNumbers = function(l1, l2) {
-    let listNode = function ListNode(val, next) {
-        this.val = (val===undefined ? 0 : val)
-        this.next = (next===undefined ? null : next)
+
+    function ListNode(val, next) {
+    this.val = (val===undefined ? 0 : val)
+    this.next = (next===undefined ? null : next)
     } 
+
+    let head = null;
+    let temp = null;
+    
+
     let carry = 0;
     
-    while(l1 !== null || l2 !== null || carry > 0) {
+    while(l1 !== null || l2 !== null) {
         
         let sum = 0;
         
-        if(l1 !== null){
+        if(l1 !== null) {
             sum += l1.val
+            l1 = l1.next
         }
         if(l2 !== null) {
             sum += l2.val
+            l2 = l2.next
+
         }
         sum += carry
+        carry = 0
         
         if(sum >= 10) {
-            carry = sum % 10;
-            sum = Math.floor(sum / 10);
+            carry = Math.floor(sum / 10);
+            sum = sum % 10;
         }
         
-        listNode.val = sum
+        if(head === null) {
+            head = temp = new ListNode(sum)
+        }
+        else {
+            temp.next = new ListNode(sum)
+            temp = temp.next
+        }
         
-        l1 = l1.next
-        l2 = l2.next
-        listNode.next = new listNode()
     }
+    if(carry) temp.next = new ListNode(carry);
     
-    return listNode
+    return head
     
 };
