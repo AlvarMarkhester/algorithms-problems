@@ -32,3 +32,33 @@ var isPalindrome = function(head) {
     if(normal === reversed) return true
     return false
 };
+
+
+
+
+function ListNode(val, next){
+    this.val = (val !== undefined) ? val : 0;
+    this.next = (next !== undefined) ? next : null;
+}
+
+var isPalindrome = function(head) {
+    let normalHead = head
+    let reversedHead = reverseNode(head)
+    while(normalHead !== null) {
+        if(normalHead.val !== reversedHead.val) return false
+        normalHead = normalHead.next
+        reversedHead = reversedHead.next
+    }
+    return true
+}
+
+function reverseNode(head) {
+    prev = null
+    pointer = head
+    while(pointer) {
+        copy = new ListNode(pointer.val, prev)
+        prev = copy
+        pointer = pointer.next
+    }
+    return prev
+}
