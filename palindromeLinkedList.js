@@ -62,3 +62,20 @@ function reverseNode(head) {
     }
     return prev
 }
+
+
+function isPalindrome(head) {
+
+    let fast = head
+    let slow = head
+    let n = 0
+
+    while(fast.next.next) {
+        slow = slow.next
+        fast = fast.next.next
+        n++
+    }
+
+
+
+}
