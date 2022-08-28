@@ -1,4 +1,3 @@
-
 const s = "abc"
 const t = "ahbgdc"
 var isSubsequence = function(s, t) {
