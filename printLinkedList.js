@@ -1,6 +1,6 @@
 function printLinkedList(head) {
     if(head === null) return
-    console.log(head.data)
+    console.log(head.val)
     printLinkedList(head.next)
 }
 
@@ -10,3 +10,5 @@ function printLinkedList2(head) {
         head = head.next
     }
 }
+
+printLinkedList(head)
