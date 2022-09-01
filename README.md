@@ -1,2 +1,3 @@
 # algorithms-problems
-My leetcode journey, all solutions in either javascript or typescript
+My solutions to some common and must known algorithms..
+Send me more programming questions :)
