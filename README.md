@@ -1,3 +1,3 @@
 # algorithms-problems
-My solutions to some common and must known algorithms..
-Send me more programming questions :)
+Solutions to random algorithm problems on leetcode or hackerrank.
+Feel free to improve solutions or take a look for improvement yourself. :)
